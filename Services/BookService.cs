@@ -38,7 +38,7 @@ namespace BookApi.Services
             return _books;
         }
 
-        public Book GetBookById(int id)
+        public Book? GetBookById(int id)
         {
             return _books.FirstOrDefault(b => b.Id == id);
         }
@@ -50,7 +50,7 @@ namespace BookApi.Services
             return book;
         }
 
-        public Book UpdateBook(Book book)
+        public Book? UpdateBook(Book book)
         {
             var existingBook = _books.FirstOrDefault(b => b.Id == book.Id);
             if (existingBook == null)
