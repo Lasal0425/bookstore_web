@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "44YSoCY5QCc=",
+  "dgSpecHash": "aKs3hBrhGOU=",
   "success": true,
-  "projectFilePath": "D:\\Projects\\BookApi\\BookApi.csproj",
+  "projectFilePath": "D:\\Projects\\BookApi\\bookstore_web\\BookApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.5\\microsoft.aspnetcore.openapi.9.0.5.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

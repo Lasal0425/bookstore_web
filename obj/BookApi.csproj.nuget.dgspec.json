@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\BookApi\\BookApi.csproj": {}
+    "D:\\Projects\\BookApi\\bookstore_web\\BookApi.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\BookApi\\BookApi.csproj": {
+    "D:\\Projects\\BookApi\\bookstore_web\\BookApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\BookApi\\BookApi.csproj",
+        "projectUniqueName": "D:\\Projects\\BookApi\\bookstore_web\\BookApi.csproj",
         "projectName": "BookApi",
-        "projectPath": "D:\\Projects\\BookApi\\BookApi.csproj",
+        "projectPath": "D:\\Projects\\BookApi\\bookstore_web\\BookApi.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\BookApi\\obj\\",
+        "outputPath": "D:\\Projects\\BookApi\\bookstore_web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config"
