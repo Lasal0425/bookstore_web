@@ -3,9 +3,10 @@ namespace BookApi.Models
     public class Book
     {
         public int Id { get; set; }
-        public required string Title { get; set; }
-        public required string Author { get; set; }
-        public required string ISBN { get; set; }
-        public DateTime PublicationDate { get; set; }
+        public string Title { get; set; } = string.Empty;
+        public string Author { get; set; } = string.Empty;
+        public string? Isbn { get; set; }
+        public DateTime? PublishedDate { get; set; }
+        public string? Genre { get; set; }
     }
 }

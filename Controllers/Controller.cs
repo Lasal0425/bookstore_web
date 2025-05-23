@@ -1,12 +1,11 @@
-using Microsoft.AspNetCore.Mvc;
 using BookApi.Models;
 using BookApi.Services;
-using System;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BookApi.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class BooksController : ControllerBase
     {
         private readonly IBookService _bookService;
@@ -16,65 +15,48 @@ namespace BookApi.Controllers
             _bookService = bookService;
         }
 
-        // GET: api/Books
         [HttpGet]
-        public IActionResult GetBooks()
+        public async Task<ActionResult<IEnumerable<Book>>> GetBooks()
         {
-            return Ok(_bookService.GetAllBooks());
+            var books = await _bookService.GetAllBooksAsync();
+            return Ok(books);
         }
 
-        // GET: api/Books/5
         [HttpGet("{id}")]
-        public IActionResult GetBook(int id)
+        public async Task<ActionResult<Book>> GetBook(int id)
         {
-            var book = _bookService.GetBookById(id);
+            var book = await _bookService.GetBookByIdAsync(id);
             if (book == null)
-            {
                 return NotFound();
-            }
             return Ok(book);
         }
 
-        // POST: api/Books
         [HttpPost]
-        public IActionResult CreateBook([FromBody] Book book)
+        public async Task<ActionResult<Book>> AddBook(Book book)
         {
-            if (book == null)
-            {
-                return BadRequest();
-            }
-
-            var createdBook = _bookService.AddBook(book);
-            return CreatedAtAction(nameof(GetBook), new { id = createdBook.Id }, createdBook);
+            var addedBook = await _bookService.AddBookAsync(book);
+            return CreatedAtAction(nameof(GetBook), new { id = addedBook.Id }, addedBook);
         }
 
-        // PUT: api/Books/5
         [HttpPut("{id}")]
-        public IActionResult UpdateBook(int id, [FromBody] Book book)
+        public async Task<ActionResult<Book>> UpdateBook(int id, Book book)
         {
-            if (book == null || id != book.Id)
-            {
+            if (id != book.Id)
                 return BadRequest();
-            }
 
-            var updatedBook = _bookService.UpdateBook(book);
+            var updatedBook = await _bookService.UpdateBookAsync(book);
             if (updatedBook == null)
-            {
                 return NotFound();
-            }
 
             return Ok(updatedBook);
         }
 
-        // DELETE: api/Books/5
         [HttpDelete("{id}")]
-        public IActionResult DeleteBook(int id)
+        public async Task<ActionResult> DeleteBook(int id)
         {
-            var result = _bookService.DeleteBook(id);
-            if (!result)
-            {
+            var deleted = await _bookService.DeleteBookAsync(id);
+            if (!deleted)
                 return NotFound();
-            }
 
             return NoContent();
         }

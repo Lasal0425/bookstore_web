@@ -1,14 +1,13 @@
 using BookApi.Models;
-using System.Collections.Generic;
 
 namespace BookApi.Services
 {
     public interface IBookService
     {
-        IEnumerable<Book> GetAllBooks();
-        Book? GetBookById(int id);
-        Book AddBook(Book book);
-        Book? UpdateBook(Book book);
-        bool DeleteBook(int id);
+        Task<IEnumerable<Book>> GetAllBooksAsync();
+        Task<Book?> GetBookByIdAsync(int id);
+        Task<Book> AddBookAsync(Book book);
+        Task<Book?> UpdateBookAsync(Book book);
+        Task<bool> DeleteBookAsync(int id);
     }
 }
